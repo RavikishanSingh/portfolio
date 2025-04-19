@@ -1833,6 +1833,7 @@ footer {
 /* Modal Base Styling */
 .modal {
   position: fixed;
+  display: none;
   z-index: 1000;
   left: 0;
   top: 0;
