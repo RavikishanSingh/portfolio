@@ -125,61 +125,56 @@
               </div>
             </div>
           </section>
-
-          <div id="projectModal" class="modal" style="display: none;">
-            <div class="modal-content">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <div class="modal-body">
-                <img id="modalImage" src="./src/png/project1.png" alt="Project Image" class="modal-image" />
-                <div class="modal-text">
-                  <h2 id="modalTitle">YouTube Video Downloader</h2>
-                  <p id="modalDescription">
-                    <strong>Project Overview:</strong><br>
-                    The YouTube Video Downloader is a Python-based application that allows users to download videos in various resolutions and formats using the pytube library.<br><br>
-          
-                    <strong>Key Features:</strong><br>
-                    ✅ Download videos in different resolutions (720p, 1080p, 4K, audio-only).<br>
-                    ✅ Fast and efficient multi-threaded downloading.<br>
-                    ✅ User-friendly GUI with Tkinter.<br>
-                    ✅ MP4 and MP3 format support.<br>
-                    ✅ Clipboard Auto-Paste for easy link detection.<br><br>
-          
-                    <strong>Technologies Used:</strong><br>
-                    🖥️ Python | 🎞️ Pytube | 🖼️ Tkinter | ⚡ Threading<br><br>
-          
-                    <strong>Challenges & Solutions:</strong><br>
-                    🔹 Overcame YouTube API restrictions by regularly updating the pytube library.<br>
-                    🔹 Optimized download speed with multi-threading.<br>
-                    🔹 Implemented robust error handling for invalid URLs and network issues.<br><br>
-          
-                    <strong>Project Outcome:</strong><br>
-                    A simple yet powerful tool that makes YouTube video downloading seamless and efficient.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-<div id="projectModal2" class="modal" style="display: none;">
+<div id="projectModal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeImageModal()">&times;</span>
+    <span class="close" onclick="closeModal()">&times;</span>
     <div class="modal-body">
-      <!-- Initially Cropped Image (16:9) -->
-      <div class="image-preview" onclick="expandImage()">
-        <img id="modalImage2" src="src/png/kedarnath_webpge.png" alt="Project Image" class="modal-image" />
-      </div>
-      <div class="modal-text">
-        <h2 id="modalTitle2">Kedarnath Tour Website</h2>
-        <p id="modalDescription2">
-          This is a website designed for Kedarnath tour packages, featuring a clean layout, booking options, and interactive travel guides.
-        </p>
+      <div class="content-grid">
+        <div class="modal-image-container" onclick="toggleFullscreenImage()">
+          <img id="modalImage" src="./src/png/project1.png" alt="Project Image" class="modal-image" />
+          <div class="image-click-hint">Click to view full size</div>
+        </div>
+        <div class="modal-text">
+          <h2 id="modalTitle">YouTube Video Downloader</h2>
+          
+          <strong>Project Overview</strong>
+          <p>The YouTube Video Downloader is a Python-based application that allows users to download videos in various resolutions and formats using the pytube library.</p>
+          
+          <strong>Key Features</strong>
+          <ul class="feature-list">
+            <li>Download videos in different resolutions (720p, 1080p, 4K, audio-only)</li>
+            <li>Fast and efficient multi-threaded downloading</li>
+            <li>User-friendly GUI with Tkinter</li>
+            <li>MP4 and MP3 format support</li>
+            <li>Clipboard Auto-Paste for easy link detection</li>
+          </ul>
+          
+          <strong>Technologies Used</strong>
+          <div class="tech-stack">
+            <span class="tech-item">🖥️ Python</span>
+            <span class="tech-item">🎞️ Pytube</span>
+            <span class="tech-item">🖼️ Tkinter</span>
+            <span class="tech-item">⚡ Threading</span>
+          </div>
+          
+          <strong>Challenges & Solutions</strong>
+          <p>Overcame YouTube API restrictions by regularly updating the pytube library. Optimized download speed with multi-threading. Implemented robust error handling for invalid URLs and network issues.</p>
+          
+          <strong>Project Outcome</strong>
+          <p>A simple yet powerful tool that makes YouTube video downloading seamless and efficient.</p>
+        </div>
       </div>
     </div>
   </div>
+  
+  <div class="fullscreen-exit" onclick="toggleFullscreenImage()">&times;</div>
+  
+  <div class="zoom-controls">
+    <button class="zoom-btn" onclick="zoomImage(-0.2)">−</button>
+    <button class="zoom-btn" onclick="zoomImage(0)">100%</button>
+    <button class="zoom-btn" onclick="zoomImage(0.2)">+</button>
+  </div>
 </div>
-
-          
-          
 
           <footer id="footer">
             <button class="fas" id="backtotopbutton" onclick="scrolltoTopfunction()">
@@ -251,140 +246,176 @@
             </div>
         </footer>
           <script src="main.js"></script>
-
-<!-- JavaScript for Modal Functionality (Add to main.js) -->
-          <script>
-           // Hide modal as soon as JavaScript loads
-           document.addEventListener("DOMContentLoaded", function () {
-          let modals = document.querySelectorAll(".modal"); // Select all modals
-          let closeButtons = document.querySelectorAll(".close"); // Select all close buttons
-
-  // Function to open the correct modal
-  function openModal(modalId) {
-    document.getElementById(modalId).style.display = "flex";
-  }
-
-  // Function to close all modals
-  function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
-  }
-
-  // Close modal when clicking outside
-  window.addEventListener("click", function (event) {
-    modals.forEach((modal) => {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  });
-
-  // Close modal when clicking the close button
-  closeButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      let modal = this.closest(".modal");
-      modal.style.display = "none";
-    });
-  });
-
-  // Attach event listeners to all "Know More" buttons
-  let buttons = document.querySelectorAll(".know-more-btn");
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      let modalId = this.getAttribute("data-modal"); // Get the correct modal ID
-      openModal(modalId);
-    });
-  });
-});
-
-          </script>
-          <script>
-            // Open Image Modal
-function openImageModal() {
-  document.getElementById("projectModal2").style.display = "flex";
-}
-
-// Close Image Modal
-function closeImageModal() {
-  document.getElementById("projectModal2").style.display = "none";
-  document.getElementById("modalImage2").classList.remove("full-image"); // Reset to cropped state
-}
-
-// Expand Image when Clicked
-function expandImage() {
-  let img = document.getElementById("modalImage2");
-  img.classList.toggle("full-image"); // Toggle between cropped and full image
-}
-
-          </script>
           <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-          <script>
-            AOS.init();
-          </script>
-        
-          <script>
-            function openURL() {
-              var url = "src/pdf/na";
-        
-              window.open(url, "_blank");
-            }
-          </script>
-        
-          <script>
-            const cursorInner = document.getElementById("cursor-inner");
-            const cursorOuter = document.getElementById("cursor-outer");
-            const links = document.querySelectorAll("a,label,button");
-        
-            document.addEventListener("mousemove", function (e) {
-              const posX = e.clientX;
-              const posY = e.clientY;
-        
-              cursorInner.style.left = `${posX}px`;
-              cursorInner.style.top = `${posY}px`;
-        
-              // cursorOuter.style.left = `${posX}px`;
-              // cursorOuter.style.top = `${posY}px`;
-        
-              cursorOuter.animate(
-                {
-                  left: `${posX}px`,
-                  top: `${posY}px`,
-                },
-                { duration: 500, fill: "forwards" }
-              );
-        
-              links.forEach((link) => {
-                link.addEventListener("mouseenter", () => {
-                  cursorInner.classList.add("hover");
-                  cursorOuter.classList.add("hover");
-                });
-                link.addEventListener("mouseleave", () => {
-                  cursorInner.classList.remove("hover");
-                  cursorOuter.classList.remove("hover");
-                });
-              });
-            });
-          </script>
-          <script>const filterContainer = document.querySelector(".gallery-filter"),
-            galleryItems = document.querySelectorAll(".gallery-item");
-           
-            filterContainer.addEventListener("click", (event) =>{
-              if(event.target.classList.contains("filter-item")){
-                 // deactivate existing active 'filter-item'
-                 filterContainer.querySelector(".active").classList.remove("active");
-                 // activate new 'filter-item'
-                 event.target.classList.add("active");
-                 const filterValue = event.target.getAttribute("data-filter");
-                 galleryItems.forEach((item) =>{
-                  if(item.classList.contains(filterValue) || filterValue === 'all'){
-                    item.classList.remove("hide");
-                     item.classList.add("show");
-                  }
-                  else{
-                    item.classList.remove("show");
-                    item.classList.add("hide");
-                  }
-                 });
-              }
-            });</script>
-</body>
+<script>
+  AOS.init();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let modals = document.querySelectorAll(".modal");
+    let closeButtons = document.querySelectorAll(".close");
+
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = "flex";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+
+    window.addEventListener("click", function (event) {
+      modals.forEach((modal) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        let modal = this.closest(".modal");
+        modal.style.display = "none";
+      });
+    });
+
+    let buttons = document.querySelectorAll(".know-more-btn");
+    buttons.forEach((button) => {
+      button.addEventListener("click", function () {
+        let modalId = this.getAttribute("data-modal");
+        openModal(modalId);
+      });
+    });
+  });
+</script>
+
+<script>
+  const cursorInner = document.getElementById("cursor-inner");
+  const cursorOuter = document.getElementById("cursor-outer");
+  const links = document.querySelectorAll("a,label,button");
+
+  document.addEventListener("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorInner.style.left = `${posX}px`;
+    cursorInner.style.top = `${posY}px`;
+
+    cursorOuter.animate(
+      {
+        left: `${posX}px`,
+        top: `${posY}px`,
+      },
+      { duration: 500, fill: "forwards" }
+    );
+
+    links.forEach((link) => {
+      link.addEventListener("mouseenter", () => {
+        cursorInner.classList.add("hover");
+        cursorOuter.classList.add("hover");
+      });
+      link.addEventListener("mouseleave", () => {
+        cursorInner.classList.remove("hover");
+        cursorOuter.classList.remove("hover");
+      });
+    });
+  });
+</script>
+
+<script>
+  let isFullscreen = false;
+  let currentZoom = 1;
+
+  function toggleFullscreenImage() {
+    const modal = document.getElementById('projectModal');
+    const modalImage = document.getElementById('modalImage');
+
+    isFullscreen = !isFullscreen;
+
+    if (isFullscreen) {
+      modal.classList.add('fullscreen-mode');
+      modalImage.style.cursor = 'zoom-out';
+      currentZoom = 1;
+      updateImageZoom();
+      enableImageDragScroll();
+    } else {
+      modal.classList.remove('fullscreen-mode');
+      modalImage.style.cursor = 'zoom-in';
+      modalImage.style.transform = 'scale(1)';
+      disableImageDragScroll();
+    }
+  }
+
+  function zoomImage(zoomChange) {
+    if (zoomChange === 0) {
+      currentZoom = 1;
+    } else {
+      currentZoom += zoomChange;
+      if (currentZoom < 0.5) currentZoom = 0.5;
+      if (currentZoom > 3) currentZoom = 3;
+    }
+    updateImageZoom();
+  }
+
+  function updateImageZoom() {
+    const modalImage = document.getElementById('modalImage');
+    modalImage.style.transform = `scale(${currentZoom})`;
+  }
+
+  let isDragging = false;
+  let startX, startY, scrollLeft, scrollTop;
+
+  function enableImageDragScroll() {
+    const imageContainer = document.querySelector('.modal.fullscreen-mode .modal-image-container');
+    if (!imageContainer) return;
+
+    imageContainer.addEventListener('mousedown', startDrag);
+    imageContainer.addEventListener('mousemove', dragImage);
+    imageContainer.addEventListener('mouseup', endDrag);
+    imageContainer.addEventListener('mouseleave', endDrag);
+  }
+
+  function disableImageDragScroll() {
+    const imageContainer = document.querySelector('.modal-image-container');
+    if (!imageContainer) return;
+
+    imageContainer.removeEventListener('mousedown', startDrag);
+    imageContainer.removeEventListener('mousemove', dragImage);
+    imageContainer.removeEventListener('mouseup', endDrag);
+    imageContainer.removeEventListener('mouseleave', endDrag);
+  }
+
+  function startDrag(e) {
+    isDragging = true;
+    startX = e.pageX - this.offsetLeft;
+    startY = e.pageY - this.offsetTop;
+    scrollLeft = this.scrollLeft;
+    scrollTop = this.scrollTop;
+    this.style.cursor = 'grabbing';
+    e.preventDefault();
+  }
+
+  function dragImage(e) {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - this.offsetLeft;
+    const y = e.pageY - this.offsetTop;
+    const walkX = (x - startX) * 1.5;
+    const walkY = (y - startY) * 1.5;
+    this.scrollLeft = scrollLeft - walkX;
+    this.scrollTop = scrollTop - walkY;
+  }
+
+  function endDrag() {
+    isDragging = false;
+    this.style.cursor = 'grab';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('projectModal');
+    modal.style.display = 'none';
+    if (isFullscreen) toggleFullscreenImage();
+  }
+</script>
+  </body>
 </html>
