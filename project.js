@@ -16,28 +16,72 @@ const projectData = {
       outcome: "A simple yet powerful tool that makes YouTube video downloading seamless and efficient."
     },
     "project2": {
-      title: "Kedarnath Travel",
-      image: "./src/png/kedarnath_webpge.png",
-      overview: "A real-time analytics dashboard for tracking sales and inventory.",
-      features: [
-        "Real-time data visualization",
-        "Inventory management system",
-        "Sales forecasting with ML",
-        "User permission controls",
-        "Customizable reporting"
-      ],
-      technologies: ["🌐 React", "📊 D3.js", "🔥 Firebase", "🧠 TensorFlow.js"],
-      challenges: "Implemented complex data visualization while maintaining performance. Created a responsive design that works across all device sizes.",
-      outcome: "Increased business efficiency by 40% through actionable insights and automated inventory alerts."
-    },
-    // Add more projects as needed
+  "title": "Mico – Voice Assistant Using Python",
+  "image": "./src/png/mico.jpeg",
+  "overview": "Mico is an intelligent voice assistant developed in Python that executes voice-based commands to perform tasks like searching the web, playing music, telling the time, and opening applications. It showcases my skills in speech recognition, text-to-speech synthesis, and system automation using Python libraries.",
+  "features": [
+    "Speech recognition for real-time voice input",
+    "Text-to-speech response system",
+    "Web search and browser automation",
+    "Time and date announcements",
+    "Application launcher through voice commands"
+  ],
+  "technologies": ["🐍 Python", "🗣️ SpeechRecognition", "🔊 pyttsx3", "🌐 Webbrowser", "📁 OS module"],
+  "challenges": "Ensured accurate speech recognition in noisy environments and managed multiple user inputs efficiently without lag.",
+  "outcome": "Successfully built a lightweight, fully functional voice assistant that automates routine tasks and enhances productivity through voice interaction."
+},
+   "project3": {
+  "title": "WhatsApp Bulk Messenger with UI Using Python",
+  "image": "./src/png/bulk messanger.png",
+  "overview": "A Python-based desktop tool that allows users to send WhatsApp messages in bulk through an intuitive user interface. It reads contact numbers and messages from an Excel file and sends them one by one using WhatsApp Web automation. Designed to streamline communication without violating WhatsApp's usage policies.",
+  "features": [
+    "Read phone numbers and messages from Excel",
+    "Automated messaging via WhatsApp Web",
+    "Simple and user-friendly interface",
+    "Sequential message delivery to avoid detection",
+    "No manual clicks after login"
+  ],
+  "technologies": ["🐍 Python", "📊 openpyxl", "💻 Tkinter", "🌐 Selenium", "🧾 Excel"],
+  "challenges": "Ensured reliable browser automation without triggering WhatsApp security flags, and optimized message delays to avoid being flagged as spam.",
+  "outcome": "Delivered a tool that simplifies WhatsApp outreach for businesses and individuals, saving time and reducing manual effort while maintaining user privacy."
+},
+"project4": {
+  "title": "Snake Game in C with UI",
+  "image": "./src/png/snake2.png",
+  "overview": "A classic Snake game developed in C with a simple graphical user interface. The game features real-time movement, score tracking, food generation, and game-over conditions. It demonstrates logic building, user input handling, and terminal/graphic-based UI implementation in the C programming language.",
+  "features": [
+    "Classic snake movement and growth logic",
+    "Real-time keyboard input handling",
+    "Score tracking and display",
+    "Food spawning at random positions",
+    "Game-over condition and restart option"
+  ],
+  "technologies": ["💻 C Language", "🧱 Graphics.h (or SDL if used)", "⌨️ Console/GUI Input"],
+  "challenges": "Managed real-time input without blocking the game loop and ensured smooth rendering of game objects within a constrained terminal or graphics window.",
+  "outcome": "Created a fully playable and responsive Snake game in C, showcasing low-level logic implementation and interactive UI development."
+},
+   "project5": {
+  "title": "QR Generator and Reader Using Python for Web",
+  "image": "./src/png/QR.png",
+  "overview": "A web-based application developed in Python to generate and read QR codes. The QR generator allows users to create QR codes for URLs, texts, and other data, while the QR reader can scan and decode QR codes using a webcam or uploaded images. This project showcases web development skills using Python, Flask, and relevant QR code libraries.",
+  "features": [
+    "QR Code generation for URLs, texts, and other data",
+    "Real-time QR code scanning using webcam",
+    "Decode QR codes from uploaded images",
+    "Simple and intuitive user interface",
+    "Instant QR code download option"
+  ],
+  "technologies": ["🐍 Python", "🌐 Flask", "⚡ QRCode", "📸 OpenCV", "🖼️ Pillow"],
+  "challenges": "Ensured compatibility with various devices for scanning and decoding, and implemented efficient image processing for accurate QR code detection.",
+  "outcome": "Created a functional web application that allows users to easily generate and scan QR codes for various uses, improving user experience with a seamless interface."
+},
   };
   
   // Function to open modal with specific project data
   function openProjectModal(projectId) {
     // Get the project data
     const project = projectData[projectId];
-    if (!project) return;
+    if (!project) return; 
     
     // Update modal content
     document.getElementById("modalTitle").textContent = project.title;
