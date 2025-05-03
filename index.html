@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- stylesheet -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="gallery.css" />
   <!-- google fonts-->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Orbitron&family=Fira+Code&family=Six+Caps" />
@@ -200,23 +199,6 @@
               <p class="letsTalkBtn-text">Let's Talk!</p>
               <span class="letsTalkBtn-BG"></span>
             </button></a>
-          <div class="setting-container" id="setting-container">
-            <input type="checkbox" id="switchforsetting" onclick="settingtoggle()" />
-
-            <label for="switchforsetting" class="needtobeinvert" id="labelforsetting" tabindex="0"
-              aria-label="settings for sound and appearance"></label>
-
-            <div class="visualmodetogglebuttoncontainer" id="visualmodetogglebuttoncontainer">
-              <input type="checkbox" id="switchforvisualmode" onclick="visualmode()" />
-              <label for="switchforvisualmode" id="labelforvisualmode" tabindex="0"
-                aria-label="switch appearance"></label>
-            </div>
-
-            <div class="soundtogglebuttoncontainer" id="soundtogglebuttoncontainer">
-              <input type="checkbox" id="switchforsound" onclick="playpause()" />
-              <label for="switchforsound" id="labelforsound" tabindex="0" aria-label="switch sound"
-                class="needtobeinvert"></label>
-            </div>
           </div>
           <!-- setting div ends -->
         </div>
@@ -491,14 +473,8 @@
           </div>
         </div>
         <div class="footer-avatar-container">
-          <img src="src/png/footer-avatar-vinod.png" alt="animation-head" class="footer-avatar-img" id="footer-wala-avatar"/>
+          <img src="src/png/footer-avatar-.png" alt="animation-head" class="footer-avatar-img" id="footer-wala-avatar"/>
           <div class="footer-avatar-face">
-            <div class="footer-avatar-eye footer-left-eye">
-              <div class="footer-pupil"></div>
-            </div>
-            <div class="footer-avatar-eye footer-right-eye">
-              <div class="footer-pupil"></div>
-            </div>
           </div>
         </div>
         <div class="footer-bottom">
@@ -562,28 +538,6 @@
       });
     });
   </script>
-  <script>const filterContainer = document.querySelector(".gallery-filter"),
-    galleryItems = document.querySelectorAll(".gallery-item");
-   
-    filterContainer.addEventListener("click", (event) =>{
-      if(event.target.classList.contains("filter-item")){
-         // deactivate existing active 'filter-item'
-         filterContainer.querySelector(".active").classList.remove("active");
-         // activate new 'filter-item'
-         event.target.classList.add("active");
-         const filterValue = event.target.getAttribute("data-filter");
-         galleryItems.forEach((item) =>{
-          if(item.classList.contains(filterValue) || filterValue === 'all'){
-            item.classList.remove("hide");
-             item.classList.add("show");
-          }
-          else{
-            item.classList.remove("show");
-            item.classList.add("hide");
-          }
-         });
-      }
-    });</script>
 </body>
 
 </html>
